@@ -54,9 +54,8 @@ export const Login = async (req, res, next) => {
 			withCredentials: true,
 			httpOnly: false,
 			path: "/",
-			secure: env.ENVIRONMENT === 'LIVE',
-			sameSite: env.ENVIRONMENT === 'LIVE' ? 'none' : 'lax',
-			// secure:false,
+			sameSite:'none',
+			secure:false,
 		});
 		res.status(201).json({
 			message: "User logged in successfully",
