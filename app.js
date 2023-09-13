@@ -23,7 +23,11 @@ app.use(
 		origin: "http://localhost:5173",
 		methods: ["GET", "POST", "PUT", "DELETE"],
 		credentials: true,
-		exposedHeaders: ["set-cookie"],
+		allowedHeaders: [
+			"Access-Control-Allow-Origin",
+			"Content-Type",
+			"Authorization",
+		],
 	})
 );
 // app.use(express.static(path.join(__dirname, 'public')));
