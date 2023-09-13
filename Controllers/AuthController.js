@@ -54,7 +54,7 @@ export const Login = async (req, res, next) => {
 			withCredentials: true,
 			httpOnly: false,
 			path: "/",
-			// sameSite:'none',
+			SameSite:"None",
 			secure:false,
 			// domain:'localhost'
 		});
