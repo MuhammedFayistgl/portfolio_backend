@@ -22,6 +22,7 @@ export const Signup = async (req, res, next) => {
 			httpOnly: false,
 			path: "/",
 			sameSite:'none',
+			secure:true,
 		});
 		res.status(201).json({
 			message: "User signed in successfully",
