@@ -11,6 +11,7 @@ import Dbconfig from "./Config/Dbcofig.js";
 
 const app = express();
 
+app.set("proxy", 1);
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -35,7 +36,6 @@ app.get("/", (req, res) => res.send(`<span><h4>Hello World!<h4/><span/>`));
 app.use(function (req, res, next) {
 	next(createError(404));
 });
-
 
 // error handler
 app.use(function (err, req, res, next) {
