@@ -20,6 +20,8 @@ export const Signup = async (req, res, next) => {
 		res.cookie("token", token, {
 			withCredentials: true,
 			httpOnly: false,
+			path: "/",
+			sameSite:'none',
 		});
 		res.status(201).json({
 			message: "User signed in successfully",
@@ -51,6 +53,7 @@ export const Login = async (req, res, next) => {
 			withCredentials: true,
 			httpOnly: false,
 			path: "/",
+			sameSite:'none',
 		});
 		res.status(201).json({
 			message: "User logged in successfully",
