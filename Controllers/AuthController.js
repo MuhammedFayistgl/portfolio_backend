@@ -20,7 +20,7 @@ export const Signup = async (req, res, next) => {
 		res.cookie("token", token, {
 			withCredentials: true,
 			httpOnly: false,
-			path:'http://localhost:5173'
+		
 		});
 		res.status(201).json({
 			message: "User signed in successfully",
