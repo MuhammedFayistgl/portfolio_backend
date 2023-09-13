@@ -11,7 +11,7 @@ import Dbconfig from "./Config/Dbcofig.js";
 
 const app = express();
 
-app.set("proxy", 1);
+// app.set("proxy", 1);
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
