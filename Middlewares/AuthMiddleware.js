@@ -9,6 +9,7 @@ import UserModel from "../Models/UserModel.js";
  */
 export const userVerification = async (req, res, next) => {
 	const token = req.cookies.token;
+	console.log("token===", token);
 	if (!token) {
 		return res.json({ status: false });
 	}
@@ -19,6 +20,7 @@ export const userVerification = async (req, res, next) => {
 			const user = await UserModel.findById(data.id);
 			req.userId = data.id;
 			if (user) {
+				console.log("Midlwer passed");
 				next();
 			} else return res.json({ status: false });
 		}

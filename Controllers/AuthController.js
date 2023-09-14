@@ -21,8 +21,8 @@ export const Signup = async (req, res, next) => {
 			withCredentials: true,
 			httpOnly: false,
 			path: "/",
-			sameSite:'none',
-			secure:false,
+			sameSite: "none",
+			secure: false,
 		});
 		res.status(201).json({
 			message: "User signed in successfully",
@@ -53,14 +53,15 @@ export const Login = async (req, res, next) => {
 		res.cookie("token", token, {
 			withCredentials: true,
 			httpOnly: false,
-			secure:true,
+			secure: true,
 			path: "/",
 			SameSite: "None",
-			domain:'portfolio-backend-75ja.onrender.com'
+			domain: "portfolio-backend-75ja.onrender.com",
 		});
 		res.status(201).json({
 			message: "User logged in successfully",
 			success: true,
+			token,
 		});
 		next();
 	} catch (error) {
