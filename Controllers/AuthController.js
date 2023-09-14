@@ -55,8 +55,8 @@ export const Login = async (req, res, next) => {
 			httpOnly: false,
 			secure:false,
 			path: "/",
-			// SameSite: "None",
-			// domain:'localhost'
+			SameSite: "None",
+			domain:'portfolio-backend-75ja.onrender.com'
 		});
 		res.status(201).json({
 			message: "User logged in successfully",
