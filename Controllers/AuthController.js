@@ -58,7 +58,6 @@ export const Login = async (req, res, next) => {
 			secure:false,
 			// domain:'localhost'
 		});
-		req.session.isAuth = true
 		res.status(201).json({
 			message: "User logged in successfully",
 			success: true,
