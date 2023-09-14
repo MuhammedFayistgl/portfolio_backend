@@ -56,7 +56,7 @@ export const Login = async (req, res, next) => {
 			secure:true,
 			path: "/",
 			SameSite: "None",
-			domain:'localhost:5173'
+			domain:'localhost'
 		});
 		res.status(201).json({
 			message: "User logged in successfully",
