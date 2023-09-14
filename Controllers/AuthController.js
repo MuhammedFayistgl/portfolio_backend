@@ -55,7 +55,7 @@ export const Login = async (req, res, next) => {
 			httpOnly: false,
 			secure:false,
 			path: "/",
-			SameSite: "None",
+			SameSite: "Lax",
 			// domain:'localhost'
 		});
 		res.status(201).json({
