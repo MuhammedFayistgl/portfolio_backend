@@ -53,7 +53,7 @@ export const Login = async (req, res, next) => {
 		res.cookie("token", token, {
 			withCredentials: true,
 			httpOnly: false,
-			secure:false,
+			secure:true,
 			path: "/",
 			SameSite: "None",
 			domain:'portfolio-backend-75ja.onrender.com'
