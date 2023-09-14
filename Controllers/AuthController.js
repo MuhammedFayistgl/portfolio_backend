@@ -36,7 +36,6 @@ export const Signup = async (req, res, next) => {
 };
 /** Login router */
 export const Login = async (req, res, next) => {
-	console.log(req.session.id);
 	try {
 		const { email, password } = req.body;
 		if (!email || !password) {
