@@ -13,8 +13,8 @@ router.get("/", function (req, res, next) {
  * ? Signup route
  */
 router.post("/signup", Signup);
-router.post("/login", Login);
-router.post("/getuser-data-with-id", userVerification, getalluserData);
+router.post("/login", Login );
+router.post("/getuser-data-with-id",userVerification, getalluserData );
 
 export default router;
 

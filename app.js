@@ -5,12 +5,18 @@ import cookieParser from "cookie-parser";
 import logger from "morgan";
 import adminRouter from "./routes/admin.js";
 import usersRouter from "./routes/users.js";
-import session from "express-session";
+// import session from "express-session";
+// import { default as connectMongoDBSession } from "connect-mongodb-session";
 import "dotenv/config";
 import cors from "cors";
 import Dbconfig from "./Config/Dbcofig.js";
 
 const app = express();
+// const MongoDBStore = connectMongoDBSession(session);
+// const store = new MongoDBStore({
+// 	uri: process.env.MONGO_URL,
+// 	collection: "sessions",
+// });
 
 // app.set("proxy", 1);
 app.use(logger("dev"));
@@ -18,24 +24,25 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.set("trust proxy", 1); // trust first proxy
-app.use(
-	session({
-		secret: process.env.TOKEN_KEY,
-		resave: false,
-		saveUninitialized: false,
-		cookie: { secure: false },
-	})
-);
+// app.use(
+// 	session({
+// 		secret: process.env.TOKEN_KEY,
+// 		resave: false,
+// 		saveUninitialized: false,
+// 		cookie: { secure: false },
+// 		store: store,
+// 	})
+// );
 //! cors
 
 app.use(
 	cors({
 		origin: "http://localhost:5173",
-		methods: ["GET", "POST", "PUT", "DELETE"],
-		credentials: true,
+		methods: ["GET", "POST", "PUT", "DELETE"],      
+		credentials: true,    
 		allowedHeaders: [
 			"Access-Control-Allow-Origin",
-			"Content-Type",
+			"Content-Type",  
 			"Authorization",
 		],
 	})
