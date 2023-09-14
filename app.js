@@ -38,15 +38,21 @@ app.set("trust proxy", 1); // trust first proxy
 app.use(
 	cors({
 		origin: "http://localhost:5173",
-		methods: ["GET", "POST", "PUT", "DELETE"],      
-		credentials: true,    
+		methods: ["GET", "POST", "PUT", "DELETE"],
+		credentials: true,
 		allowedHeaders: [
 			"Access-Control-Allow-Origin",
-			"Content-Type",  
+			"Content-Type",
 			"Authorization",
 		],
 	})
 );
+app.use((req, res, next) => {
+	res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
+	res.setHeader("Access-Control-Allow-Methods","GET", "POST", "PUT", "DELETE");
+	res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+	next();
+});
 // app.use(express.static(path.join(__dirname, 'public')));
 
 app.use("/v1/admin", adminRouter);
